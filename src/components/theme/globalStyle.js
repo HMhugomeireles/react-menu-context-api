@@ -8,6 +8,13 @@ export const Theme = {
       fontSecondary: `'Open Sans Condensed', sans-serif`,
       sizeNormal: '1.3rem',
     },
+    gradient: {
+      backgroundlinear1: `linear-gradient(180deg, #30cfd0 0%, #330867 100%)`,
+      backgroundlinear2: `linear-gradient(170deg, #30cfd0 0%, #330867 100%)`,
+      backgroundOldBrowsers: '#43cea2',
+      backgroundWebkit: '-webkit-linear-gradient(to right, #185a9d, #43cea2)',
+      background: 'linear-gradient(to right, #185a9d, #43cea2)', 
+    }
   },
   white: {
     
