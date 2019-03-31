@@ -7,9 +7,11 @@
     "react-dom": "^16.8.6",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
+    "react-spring": "^8.0.18",
     "styled-components": "^4.2.0"
   },
   "scripts": {
+    "hot": "webpack-dev-server --hot",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -23,5 +25,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "react-hot-loader": "^4.8.2"
+  }
 }

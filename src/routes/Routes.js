@@ -1,23 +1,28 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { Home, About, Works, Contact } from '../containers'
 
-import { menuRoutes } from './routes.menu'
-
-export default class Routes extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Switch>
-          {menuRoutes.map((route) => (
-            <Route 
-              key={route.path}
-              path={route.path}
-              exact={route.exact}
-              component={route.component}
-            />
-          ))}
-        </Switch>
-      </BrowserRouter>
-    )
-  }
-}
+export const menuRoutes = [
+  {
+    name: 'Home',
+    path: '/',
+    exact: true,
+    component: Home
+  },
+  {
+    name: 'About',
+    path: '/about',
+    exact: true,
+    component: About
+  },
+  {
+    name: 'Works',
+    path: '/works',
+    exact: true,
+    component: Works
+  },
+  {
+    name: 'Contact',
+    path: '/contact',
+    exact: true,
+    component: Contact
+  },
+]

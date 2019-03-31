@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import Menu from './containers/Menu'
+import { BrowserRouter } from 'react-router-dom'
+import Menu from './containers/menu'
 import * as Context from './context'
 import './App.css'
 class App extends Component {
   render() {
     return (
       <Context.MenuProvider>
-        <Menu />
+        <BrowserRouter>
+          <Menu />
+        </BrowserRouter>
       </Context.MenuProvider>
     );
   }
