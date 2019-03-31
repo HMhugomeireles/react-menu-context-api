@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import Routes from './routes/Routes'
+import Menu from './containers/Menu'
+import * as Context from './context'
+import './App.css'
 class App extends Component {
   render() {
     return (
-      <Routes />
+      <Context.MenuProvider>
+        <Menu />
+      </Context.MenuProvider>
     );
   }
 }
