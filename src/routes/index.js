@@ -4,14 +4,13 @@ import { Switch, Route, Link } from 'react-router-dom'
 import { menuRoutes } from './routes'
 
 export const Links = (props) => {
-  console.log(props, "links")
   return (
     <Fragment>
       {menuRoutes.map((link, i) => (
         <li key={i + link.name}>
           <Link
             to={link.path}
-            onClick={props.toggle}
+            onClick={props.onActive}
           >{link.name}</Link>
         </li>
       ))}
@@ -19,8 +18,7 @@ export const Links = (props) => {
   )
 }
 
-export const Routes = (props) => {
-  console.log(props, "routes")
+export const Routes = () => {
   return (
     <Switch>
       {menuRoutes.map((route) => (

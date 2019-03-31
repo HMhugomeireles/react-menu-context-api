@@ -1,37 +1,38 @@
 import React, { Component, Fragment } from 'react'
 import styled from 'styled-components'
+
 import { Routes, Links} from '../../routes';
-
 import { Button } from './../../components'
-
 import * as Context from '../../context'
 
-class MenuFullscreen extends Component {
+class Menu extends Component {
   render() {
     return (
       <Context.MenuContext.Consumer>
-      {({ toggleMenu, state }) => 
+      {({ onEntry, onLeave, state: { menu } }) => console.log(menu) || 
         <Fragment>
-        { state.open ?
-          <MenuFullScreen
-            showIn={state.open}
-          >
-            <Button 
-              onClick={toggleMenu}
-              white
-            >X</Button>
-            <ul>
-              <Links toggle={toggleMenu}/>
-            </ul>
-          </MenuFullScreen>
+          { menu.open ?
+            <Fragment>
+              <MenuFullScreen
+                show={menu}
+              >
+                <Button 
+                  onClick={onLeave}
+                  white
+                >X</Button>
+                <ul>
+                  <Links onActive={onLeave}/>
+                </ul>
+              </MenuFullScreen>
+            </Fragment>
           :
-          <Fragment>
-            <Button 
-              onClick={toggleMenu}
-            >Menu</Button>
-            <Routes />
-          </Fragment>
-        }
+            <Fragment>
+              <Button 
+                onClick={() => onEntry()}
+              >Menu</Button>
+            </Fragment>
+          }
+          <Routes />
         </Fragment>
       }
       </Context.MenuContext.Consumer>
@@ -48,9 +49,19 @@ const MenuFullScreen = styled.div`
   background: rgba(1,1,1,0.9);
   transition: ease-in-out 300ms;
   text-align: center;
-  
-  animation: menuOpen 300ms ease-in-out forwards; 
-  
+  transition: 300ms ease-in-out;
+
+  animation-name: ${({ show }) => console.log(show, "css") &&
+    show.open ?
+      ''
+    :
+      show.open && show.leave ?
+        'showOut'
+      :
+        'showIn'
+  };
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
   
   ul {
     font-size: 5rem;
@@ -75,19 +86,24 @@ const MenuFullScreen = styled.div`
     color: #e1e1e1;
   }
 
-
-  @keyframes menuOpen {
+  @keyframes showIn {
     from {
-      transform: scale(0);
-      opacity: 0;
+      transform: translate(0, -1000px);
     }
     to {
-      transform: scale(1);
-      opacity: 0.9;
+      transform: translate(0, 0);
+    }
+  }
+  @keyframes showOut {
+    from {
+      transform: translate(0, 0);
+    }
+    to {
+      transform: translate(0, -1000px);
     }
   }
 `;
 
 
 
-export default MenuFullscreen;
+export default Menu;
