@@ -6,6 +6,7 @@ import { Button } from './../../components'
 import { Theme } from './../../components/theme/globalStyle';
 import * as Context from '../../context'
 
+
 class Menu extends Component {
   render() {
     return (
@@ -22,7 +23,9 @@ class Menu extends Component {
                   white
                 >X</Button>
                 <ul>
-                  <Links onActive={onLeave}/>
+                  <Links 
+                    onActive={onLeave}
+                  />
                 </ul>
               </MenuFullScreen>
             </Fragment>

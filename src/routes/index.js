@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import { Switch, Route, Link } from 'react-router-dom'
 
-import { menuRoutes } from './routes'
+import { menuRoutes } from './Routes'
 
 export const Links = (props) => {
   return (
@@ -11,7 +11,9 @@ export const Links = (props) => {
           <Link
             to={link.path}
             onClick={props.onActive}
-          >{link.name}</Link>
+          >
+            {link.name}
+          </Link>
         </li>
       ))}
     </Fragment>

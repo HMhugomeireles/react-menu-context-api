@@ -3,10 +3,13 @@ import { createGlobalStyle } from 'styled-components';
 
 export const Theme = {
   global: {
-    typographia: {
+    typographic: {
       fontPrimary: `'Alfa Slab One', cursive`,
       fontSecondary: `'Open Sans Condensed', sans-serif`,
+      sizeSmall: '0.9rem',
       sizeNormal: '1.3rem',
+      subTitle: '2.3rem',
+      title: '3.4rem',
     },
     gradient: {
       backgroundlinear1: `linear-gradient(180deg, #30cfd0 0%, #330867 100%)`,
@@ -36,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: ${Theme.global.typographia.fontSecondary};
-    font-size: ${Theme.global.typographia.sizeNormal}
+    font-family: ${Theme.global.typographic.fontSecondary};
+    font-size: ${Theme.global.typographic.sizeNormal}
   }
 `
