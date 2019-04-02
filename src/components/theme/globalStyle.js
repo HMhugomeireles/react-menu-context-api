@@ -17,6 +17,12 @@ export const Theme = {
       backgroundOldBrowsers: '#43cea2',
       backgroundWebkit: '-webkit-linear-gradient(to right, #185a9d, #43cea2)',
       background: 'linear-gradient(to right, #185a9d, #43cea2)', 
+    },
+    colors: {
+      blueDark: '#021733',
+      blueSoftDark: '#002351',
+      blueSoft: '#0372DE',
+      white: '#fff',
     }
   },
   white: {
@@ -31,6 +37,7 @@ export const Theme = {
 
 export const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans+Condensed:300');
+  @import url('https://fonts.googleapis.com/css?family=Sonsie+One');
   * {
     box-sizing: border-box;
     margin: 0;

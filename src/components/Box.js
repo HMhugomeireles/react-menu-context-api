@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-export const Box = () => {
+export const Box = (props) => {
   return (
     <Div>
       Box
@@ -10,11 +10,9 @@ export const Box = () => {
 }
 
 const Div = styled.div`
-  width: 20%;
-  height: 20%;
-  min-width: 120px;
-  min-height: 120px;
-  background: #a1a1a1;
+  min-width: ${props => console.log(props) || props.minW};
+  min-height: ${props => props.minH};
+  background: #f1f1f1;
   text-align: center;
   line-height: 120px;
 `
