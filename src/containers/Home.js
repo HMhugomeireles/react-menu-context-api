@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 import { Box } from './../components'
+import { HomeImgBg } from './../assets'
 
 export default class Home extends Component {
   render(props) {
@@ -10,7 +11,8 @@ export default class Home extends Component {
         <Box 
           minW={{ min: '250px' }}
           minH={{ min: '250px' }}
-        />        
+        />
+        <img src={HomeImgBg} alt="" />
       </Div>
     )
   }
